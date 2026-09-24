@@ -1,0 +1,49 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files
+.env
+.env.*
+
+# Jupyter / IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Model downloads and large artifacts
+*.bin
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.wav
+*.mp3
+*.ogg
+*.flac
+
+# Hugging Face / caches
+.huggingface/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project-generated outputs
+english_input.wav
+translated_meitei.wav
+
+# Logs
+*.log

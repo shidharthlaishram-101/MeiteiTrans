@@ -1,0 +1,19 @@
+fastapi
+uvicorn
+python-multipart
+SpeechRecognition
+sounddevice
+soundfile
+numpy
+scipy
+torch
+transformers
+parler-tts
+huggingface-hub
+sentencepiece
+onnx
+# If you want to use ONNX Runtime for CPU, you can install it with the following command:
+# onnxruntime
+
+# If you want to use ONNX Runtime for GPU, you can install it with the following command:
+# onnxruntime-gpu

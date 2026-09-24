@@ -1,0 +1,80 @@
+# English to Meitei Voice Translator
+
+This project records spoken English, converts it to text, translates the text into Meitei, generates a Meitei voice using a TTS model, and plays the final audio.
+
+## Features
+
+- Microphone recording in English
+- Speech-to-text using Google Speech Recognition
+- English to Meitei translation via an ONNX translation model
+- Meitei text-to-speech generation using Parler TTS
+- Automatic playback of the generated WAV file
+
+## Project Files
+
+- `english_voice_to_meitei_voice.py` — main end-to-end pipeline
+- `translate_once.py` — wrapper script for translation execution
+- `translator1.py` — English-to-Meitei translation model loader and logic
+- `meitei_tts_generate.py` — Meitei TTS model loader and voice synthesis
+- `requirements.txt` — Python package list
+
+## Requirements
+
+- Python 3.10 or newer
+- A working microphone
+- Internet access for speech recognition and Hugging Face model downloads
+- NVIDIA GPU is optional, but the project supports CUDA if available
+
+## Setup
+
+Create and activate a virtual environment if desired, then install dependencies:
+
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+pip install fastapi uvicorn python-multipart SpeechRecognition sounddevice soundfile numpy scipy transformers parler-tts huggingface-hub sentencepiece onnxruntime tokenizers
+```
+
+If you are using CPU only, you can install the standard PyTorch package instead of the CUDA build.
+
+## Run the Application
+
+From the project folder:
+
+```bash
+python english_voice_to_meitei_voice.py
+```
+
+The program will:
+
+1. Record English speech for a few seconds
+2. Convert it to English text
+3. Translate the text into Meitei
+4. Generate Meitei speech as a WAV file
+5. Open the generated audio file for playback
+
+## Output Files
+
+- `english_input.wav` — recorded English voice
+- `translated_meitei.wav` — final Meitei audio output
+
+## Notes
+
+- The microphone device index may need to be changed in `english_voice_to_meitei_voice.py` if your system has a different audio input.
+- The first run may take longer because the translation and TTS models are downloaded from Hugging Face.
+- If recognition fails, try speaking more clearly or check your microphone input.
+
+## Example Workflow
+
+```text
+English spoken voice
+    -> Speech recognition
+    -> English text
+    -> English to Meitei translation
+    -> Meitei text
+    -> Meitei speech generation
+    -> WAV output playback
+```
+
+## License
+
+This project is provided as-is for educational and experimental use.
