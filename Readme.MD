@@ -1,18 +1,21 @@
-# English to Meitei Voice Translator
+# English and Meitei Voice Translator
 
-This project records spoken English, converts it to text, translates the text into Meitei, generates a Meitei voice using a TTS model, and plays the final audio.
+This project supports voice translation in both directions. It can record spoken English, translate it into Meitei, generate Meitei speech, and it can also translate Meitei speech into English Speech.
 
 ## Features
 
 - Microphone recording in English
 - Speech-to-text using Google Speech Recognition
 - English to Meitei translation via an ONNX translation model
+- Meitei to English translation via an ONNX translation model
 - Meitei text-to-speech generation using Parler TTS
 - Automatic playback of the generated WAV file
 
 ## Project Files
 
 - `english_voice_to_meitei_voice.py` — main end-to-end pipeline
+- `meitei_to_english_voice.py` — Meitei voice-to-English translation pipeline
+- `meitei_to_english.py` — Meitei-to-English translation logic
 - `translate_once.py` — wrapper script for translation execution
 - `translator1.py` — English-to-Meitei translation model loader and logic
 - `meitei_tts_generate.py` — Meitei TTS model loader and voice synthesis
